@@ -1,6 +1,6 @@
 pkgname=nexpod-host-shim
 pkgver=0.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="provides the shim for libnexpod (and others) to work inside of the container"
 url="https://github.com/KilianHanich/libnexpod"
 license=('Apache')
@@ -10,8 +10,8 @@ makedepends=('zig')
 provides=('podman')
 conflicts=('podman')
 
-source=("git+https://github.com/KilianHanich/libnexpod#commit=e746d06b12ffcd5d8e10d151930b8bb68a6dfe7a")
-sha256sums=('6f59d354cfecdec5dd37836f0397c7a5ace84bcfe1e7ed6339671718fd1db3d2')
+source=("git+https://github.com/KilianHanich/libnexpod#commit=272ec000347e4e9d19cd11a12a8e632f51fafe40")
+sha256sums=('71a81c29f0ef73fc70589dfede71c0d3c20e2923cf419d217a6f5dc164f3b567')
 
 prepare() {
     cd libnexpod
@@ -25,7 +25,7 @@ build() {
 
 check() {
     cd libnexpod
-    zig build --release test
+    zig build --release shimunittests
 }
 
 package() {
