@@ -1,2 +1,2 @@
-# arch-nexpod-host-shim-pkg
-PKGBUILD for the nexpod-host-shim
+# arch-libnexpod-host-shim-pkg
+PKGBUILD for the libnexpod-host-shim

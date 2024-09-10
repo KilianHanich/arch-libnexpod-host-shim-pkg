@@ -1,6 +1,6 @@
-pkgname=nexpod-host-shim
+pkgname=libnexpod-host-shim
 pkgver=0.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc="provides the shim for libnexpod (and others) to work inside of the container"
 url="https://github.com/KilianHanich/libnexpod"
 license=('Apache')
@@ -10,17 +10,17 @@ makedepends=('zig')
 provides=('podman')
 conflicts=('podman')
 
-source=("git+https://github.com/KilianHanich/libnexpod#commit=272ec000347e4e9d19cd11a12a8e632f51fafe40")
-sha256sums=('71a81c29f0ef73fc70589dfede71c0d3c20e2923cf419d217a6f5dc164f3b567')
+source=("git+https://github.com/libnexpod/libnexpod#commit=9136c8c16fc62f27239bfffbc08270636f97c32f")
+sha256sums=('17460829f0712c5f4040034d75cb43855e8df1283458d7a11a4315deb84a3124')
 
 prepare() {
     cd libnexpod
-    zig build --fetch nexpod-host-shim
+    zig build --fetch libnexpod-host-shim
 }
 
 build() {
     cd libnexpod
-    zig build --release nexpod-host-shim
+    zig build --release libnexpod-host-shim
 }
 
 check() {
@@ -30,7 +30,7 @@ check() {
 
 package() {
     cd libnexpod
-    zig build --release --sysroot "${pkgdir}" --prefix "${pkgdir}/usr" nexpod-host-shim
+    zig build --release --sysroot "${pkgdir}" --prefix "${pkgdir}/usr" libnexpod-host-shim
     mkdir -p "${pkgdir}/usr/bin"
-    ln -s "/usr/libexec/nexpod/nexpod-host-shim" "${pkgdir}/usr/bin/podman"
+    ln -s "/usr/libexec/libnexpod/libnexpod-host-shim" "${pkgdir}/usr/bin/podman"
 }
