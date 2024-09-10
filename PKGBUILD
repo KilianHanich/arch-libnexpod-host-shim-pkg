@@ -10,8 +10,8 @@ makedepends=('zig')
 provides=('podman')
 conflicts=('podman')
 
-source=("git+https://github.com/libnexpod/libnexpod#commit=9136c8c16fc62f27239bfffbc08270636f97c32f")
-sha256sums=('17460829f0712c5f4040034d75cb43855e8df1283458d7a11a4315deb84a3124')
+source=("git+https://github.com/libnexpod/libnexpod#commit=1a309dc23949965e97aa8e882a706886e2715677")
+sha256sums=('83cd14336de0e8789b54da5f997e6eabc54ba12593002cdd9f803ed14c1dbac9')
 
 prepare() {
     cd libnexpod
