@@ -6,12 +6,12 @@ url="https://github.com/KilianHanich/libnexpod"
 license=('Apache')
 arch=('x86_64')
 depends=('glibc' 'flatpak-xdg-utils')
-makedepends=('zig')
+#makedepends=('zig')
 provides=('podman')
 conflicts=('podman')
 
-source=("git+https://github.com/libnexpod/libnexpod#commit=1a309dc23949965e97aa8e882a706886e2715677")
-sha256sums=('83cd14336de0e8789b54da5f997e6eabc54ba12593002cdd9f803ed14c1dbac9')
+source=("git+https://github.com/KilianHanich/libnexpod#commit=39b8758ac839d34572cf98b9b4c33eeda33da200")
+sha256sums=('73269b578bfdaa6bc331f9ef4201ef2980970b7aae0a10a62c3d755d032fdff2')
 
 prepare() {
     cd libnexpod
